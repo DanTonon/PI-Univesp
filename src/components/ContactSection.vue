@@ -7,13 +7,11 @@
             <v-col cols="12" sm="5">
               <h1 class="font-weight-light display-1">Inscreva-se</h1>
               <h3 class="font-weight-light mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                explicabo commodi quisquam asperiores dolore ad enim provident
-                veniam perferendis voluptate, perspiciatis.
+                Ao se inscrever, você apoia nossa causa e se torna um ponto de coleta de tampinhas plásticas! Ajude a resgatar gatinhos de rua e promova a reciclagem para gerar recursos para ração e cuidados.
+Instagram dos responsáveis: @joycguedes @paulalrojo
+Pontos de Coleta: **
               </h3>
-              <h3 class="font-weight-light mt-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing.
-              </h3>
+
               <h3 class="font-weight-light mt-3">
                 Telefone: +xx (xx) xxxxx-xxxx
               </h3>
@@ -24,25 +22,28 @@
             <v-col cols="12" sm="7">
               <v-form ref="form" v-model="valid" :lazy-validation="lazy">
                 <v-text-field
-                    v-model="name"
+                    v-model="nome"
                     :rules="nameRules"
-                    label="Nome"
+                    label="Responsável"
                     required
                 ></v-text-field>
 
                 <v-text-field
-                    v-model="email"
-                    :rules="emailRules"
-                    label="E-mail"
+                    v-model="cidade"
+                    :rules="nameRules"
+                    label="Cidade"
                     required
                 ></v-text-field>
 
                 <v-textarea
                     v-model="textArea"
                     :rules="textAreaRules"
-                    label="Mensagem"
+                    label="Endereço"
                     required
                 />
+
+                
+
 
                 <v-btn
                     :disabled="!valid"
@@ -112,9 +113,9 @@ export default {
     name: "",
     nameRules: [
       (v) => !!v || "O campo nome é obrigatório",
-      (v) => (v && v.length >= 6) || "O nome precisa ter mais de 6 caracteres",
+      (v) => (v && v.length >= 6) || "O campo precisa ter mais de 6 caracteres",
     ],
-    email: "",
+    email: "",  
     emailRules: [
       (v) => !!v || "O campo email é obrigatório",
       (v) => /.+@.+\..+/.test(v) || "O E-mail precisa ser válido",
@@ -133,6 +134,14 @@ export default {
   }),
   methods: {
     submit() {
+      const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ responsavel: this.nome, cidade: this.cidade, endereco: this.textArea, numero: this.numero })
+  };
+  fetch("https://localhost:7049/api/PontosColeta", requestOptions)
+    .then(response => response.json())
+    .then(data => (this.postId = data.id));
       /*db.collection("contactData").add({
         name: this.name,
         email: this.email,

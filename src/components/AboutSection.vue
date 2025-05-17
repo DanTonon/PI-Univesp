@@ -9,9 +9,7 @@
               <v-row class="mt-5">
                 <v-col cols="12" class="d-flex align-center">
                   <p class="text-justify">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    O projeto "Tampinha de Bigode" em Marília-SP é uma iniciativa social que arrecada tampinhas plásticas com o objetivo de vendê-las para reciclagem. Os fundos arrecadados são revertidos para a compra de rações, medicamentos, produtos de limpeza, além de contribuir para o cuidado e abrigo de gatos resgatados das ruas. Essa ação não só promove a sustentabilidade através da reciclagem, como também ajuda a cuidar de animais em situação de abandono, promovendo bem-estar e proteção aos gatinhos.
                   </p>
                 </v-col>
               </v-row>
