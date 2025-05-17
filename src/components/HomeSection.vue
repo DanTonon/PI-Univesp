@@ -1,34 +1,32 @@
 <template>
   <section id="hero">
-    <div  height="750">
-      <v-img src="@/assets/img/fundodosite.jpg"></v-img>
+    <div>
+      <v-img src="@/assets/img/fundodosite.jpg" height="750px"></v-img>
+
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="center">
             <v-col cols="12" md="6" xl="8">
-              <h1 class="display-2 font-weight-bold mb-4" style="color: black">TAMPINHAS DE BIGODE</h1>
+              <h1 class="display-2 font-weight-bold mb-4" style="color: black"></h1>
               <h1 class="font-weight-light" style="color: black">
-              {{ lebre }}
+                {{ lebre }}
               </h1>
             </v-col>
-            <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down"> </v-col>
+            <v-col cols="12" md="6" xl="4" class="hidden-sm-and-down"></v-col>
           </v-row>
         </v-col>
       </v-row>
+
       <div class="svg-border-waves text-white">
         <v-img src="@/assets/img/borderWaves.svg" />
       </div>
     </div>
-    <v-container fluid id="features" class="mt-2">
+
+    <!-- Seção de cards -->
+    <v-container fluid id="features" class="mt-8 mb-8">
       <v-row align="center" justify="center">
         <v-col cols="10">
           <v-row align="center" justify="space-around">
-            <!-- <v-col cols="12" class="text-center">
-              <h1 class="font-weight-light display-2">Title</h1>
-              <h1 class="font-weight-light">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </h1>
-            </v-col> -->
             <v-col
               cols="12"
               sm="4"
@@ -49,7 +47,7 @@
                     class="d-block ml-auto mr-auto"
                     :class="{ 'zoom-efect': hover }"
                   ></v-img>
-                  <h1 style="font-size:35px; color:chocolate">{{ feature.title }}</h1>
+                  <h1 style="font-size: 35px; color: chocolate">{{ feature.title }}</h1>
                   <h4 class="font-weight-regular subtitle-1">
                     {{ feature.text }}
                   </h4>
@@ -60,6 +58,7 @@
         </v-col>
       </v-row>
     </v-container>
+
     <div class="svg-border-waves">
       <img src="~@/assets/img/wave2.svg" />
     </div>
@@ -290,6 +289,7 @@ export default {
   transform: translateY(-20px);
   transition: 0.5s ease-out;
 }
+
 section {
   position: relative;
 }
